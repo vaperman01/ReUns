@@ -1,0 +1,462 @@
+/* ==========================================
+   ReUns - Etapa 5: Operaciones
+   (Ofertas, compras, intercambios)
+   Usa las variables de base.css
+   ========================================== */
+
+/* --- Componente: Tabs --- */
+.op-tabs {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin: 0 0 18px;
+  border-bottom: 1px solid var(--linea);
+}
+
+.op-tabs a {
+  padding: 10px 14px;
+  text-decoration: none;
+  color: var(--gris);
+  font-weight: 600;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -1px;
+}
+
+.op-tabs a[aria-current="page"] {
+  color: var(--verde);
+  border-bottom-color: var(--verde);
+}
+
+.op-tabs b {
+  display: inline-block;
+  min-width: 20px;
+  padding: 0 6px;
+  margin-left: 4px;
+  border-radius: 999px;
+  background: var(--ambar);
+  color: var(--tinta);
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+/* --- Componente: Filtros --- */
+.op-filtros {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 0 0 16px;
+}
+
+.op-filtros a {
+  padding: 6px 12px;
+  border: 1px solid var(--linea);
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--tinta);
+  font-size: 0.9rem;
+  background: #fff;
+}
+
+.op-filtros a[aria-current="true"] {
+  background: var(--verde);
+  border-color: var(--verde);
+  color: #fff;
+}
+
+/* --- Componente: Chips / Badges --- */
+.op-chip {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font: 600 0.78rem Inter, sans-serif;
+  background: var(--linea);
+  color: var(--tinta);
+}
+
+.op-chip--pendiente {
+  background: #FEF3C7;
+  color: #78350F;
+}
+
+.op-chip--aceptada,
+.op-chip--aceptado {
+  background: var(--verde-cl);
+  color: var(--verde-osc);
+}
+
+.op-chip--completada,
+.op-chip--completado {
+  background: #DCFCE7;
+  color: #14532D;
+}
+
+.op-chip--rechazada,
+.op-chip--rechazado,
+.op-chip--cancelada,
+.op-chip--cancelado {
+  background: #FEE2E2;
+  color: #7F1D1D;
+}
+
+/* --- Componente: Tarjeta de Operación --- */
+.op {
+  background: #fff;
+  border: 1px solid var(--linea);
+  border-radius: var(--r);
+  padding: 16px;
+  margin: 0 0 14px;
+  box-shadow: var(--sombra);
+}
+
+.op__cab {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.op__tipo {
+  font-weight: 600;
+}
+
+.op__prods {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.op__prods--uno {
+  grid-template-columns: 1fr;
+}
+
+.op__flecha {
+  align-self: center;
+  font-size: 1.5rem;
+  color: var(--verde);
+}
+
+.op__prod {
+  display: flex;
+  gap: 12px;
+  border: 1px solid var(--linea);
+  border-radius: 12px;
+  padding: 10px;
+  min-width: 0;
+}
+
+.op__prod img,
+.op__ph {
+  width: 84px;
+  height: 84px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex: none;
+  background: var(--verde-cl);
+}
+
+.op__ph {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+}
+
+.op__prod h3 {
+  margin: 0 0 2px;
+  font-size: 0.98rem;
+  overflow-wrap: anywhere;
+}
+
+.op__rotulo {
+  font: 600 0.72rem Inter, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--gris);
+  margin: 0 0 4px;
+}
+
+.op__msg {
+  margin: 12px 0 0;
+  padding: 10px 12px;
+  background: var(--linea);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: var(--tinta);
+}
+
+
+/* ==============================================================================
+   ReUns - Etapas 7 y 8: Cierre, Calificaciones, Reseñas y Panel de Reputación
+   Usa exclusivamente las variables del sistema (base.css)
+   ============================================================================== */
+
+/* --- Paso 7: Cierre y Resolución --- */
+.op__resolucion {
+  margin-top: 14px;
+  padding: 12px 14px;
+  background: var(--fondo);
+  border: 1px solid var(--linea);
+  border-radius: calc(var(--r) - 4px);
+}
+
+.op__resolucion--exito {
+  background: #F0FDF4;
+  border-color: #BBF7D0;
+}
+
+.op__resolucion--cancelada {
+  background: #FEF2F2;
+  border-color: #FECACA;
+}
+
+/* --- Paso 8: Componente de Calificación en Operación --- */
+.op__calificar {
+  margin-top: 14px;
+  padding: 14px;
+  background: var(--fondo);
+  border: 1px solid var(--linea);
+  border-radius: calc(var(--r) - 2px);
+}
+
+.op__calificar-cab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.op__calificar-cab h4 {
+  font-size: 0.98rem;
+  margin: 0;
+  color: var(--tinta);
+  font-weight: 600;
+}
+
+/* Selector interactivo de estrellas con inputs de radio accesibles */
+.rating-estrellas {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  gap: 4px;
+  margin: 6px 0 10px;
+}
+
+.rating-estrellas input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.rating-estrellas label {
+  font-size: 1.8rem;
+  color: var(--linea);
+  cursor: pointer;
+  transition: color 0.15s ease, transform 0.15s ease;
+  line-height: 1;
+}
+
+.rating-estrellas label:hover,
+.rating-estrellas label:hover ~ label,
+.rating-estrellas input:checked ~ label {
+  color: var(--ambar);
+}
+
+.rating-estrellas label:hover {
+  transform: scale(1.15);
+}
+
+.rating-estrellas input:focus-visible + label {
+  outline: 2px solid var(--ambar);
+  border-radius: 4px;
+}
+
+.calif-textarea {
+  width: 100%;
+  min-height: 70px;
+  padding: 8px 12px;
+  border: 1px solid var(--linea);
+  border-radius: 8px;
+  font: inherit;
+  font-size: 0.9rem;
+  color: var(--tinta);
+  resize: vertical;
+  background: #fff;
+  margin-bottom: 8px;
+}
+
+.calif-textarea:focus {
+  outline: none;
+  border-color: var(--verde);
+  box-shadow: 0 0 0 3px var(--verde-cl);
+}
+
+/* Reseña ya emitida / recibida */
+.resena-item {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  background: #fff;
+  border: 1px solid var(--linea);
+  border-radius: calc(var(--r) - 4px);
+  margin-top: 8px;
+}
+
+.resena-item__avatar {
+  flex: none;
+}
+
+.resena-item__cuerpo {
+  flex: 1;
+  min-width: 0;
+}
+
+.resena-item__cab {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+
+.resena-item__autor {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--tinta);
+}
+
+.resena-item__estrellas {
+  color: var(--ambar);
+  font-size: 0.95rem;
+  letter-spacing: 2px;
+}
+
+.resena-item__texto {
+  margin: 4px 0 0;
+  font-size: 0.88rem;
+  color: var(--tinta);
+  line-height: 1.45;
+}
+
+.resena-item__meta {
+  font-size: 0.78rem;
+  color: var(--gris);
+  margin-top: 4px;
+}
+
+/* --- Panel de Reputación y Resumen de Perfil --- */
+.reputacion-panel {
+  background: #fff;
+  border: 1px solid var(--linea);
+  border-radius: var(--r);
+  padding: 20px;
+  box-shadow: var(--sombra);
+  margin-bottom: 24px;
+}
+
+.reputacion-resumen {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 24px;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--linea);
+}
+
+@media (max-width: 640px) {
+  .reputacion-resumen {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    text-align: center;
+  }
+}
+
+.reputacion-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 130px;
+  padding: 12px;
+  background: var(--verde-cl);
+  border-radius: var(--r);
+}
+
+.reputacion-score__num {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--verde-osc);
+  line-height: 1;
+  font-family: Poppins, Inter, sans-serif;
+}
+
+.reputacion-score__estrellas {
+  color: var(--ambar);
+  font-size: 1.2rem;
+  margin: 4px 0;
+}
+
+.reputacion-score__total {
+  font-size: 0.82rem;
+  color: var(--gris);
+  font-weight: 500;
+}
+
+/* Barras de distribución de estrellas */
+.distribucion-barras {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.barra-fila {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--gris);
+}
+
+.barra-fila__label {
+  width: 20px;
+  text-align: right;
+  font-weight: 600;
+}
+
+.barra-fila__track {
+  flex: 1;
+  height: 8px;
+  background: var(--linea);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.barra-fila__fill {
+  height: 100%;
+  background: var(--ambar);
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+.barra-fila__cant {
+  width: 28px;
+  font-size: 0.78rem;
+  text-align: left;
+}
+
+/* Insignia de reputación del vendedor */
+.badge-reputacion {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #FEF3C7;
+  color: #78350F;
+  font-weight: 600;
+  font-size: 0.82rem;
+  padding: 2px 8px;
+  border-radius: 999px;
+}

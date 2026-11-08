@@ -1,0 +1,7 @@
+Para: culodearian@uns.edu.pe
+Asunto: Verifica tu correo en ReUns
+
+Hola arian,
+
+Confirma tu correo aquí (vale 24 horas):
+http://localhost/reuns/public/paginas/verificar.php?token=7c2c5fd3041df8e3233c9f49f7bf47d5e1b33db8a5e6365e766900b5bdf029d7

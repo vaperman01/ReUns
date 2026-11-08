@@ -1,0 +1,30 @@
+# ==============================================================================
+# ReUns - Blindaje de Seguridad y Control de Acceso (Directorio Raíz)
+# ==============================================================================
+
+# 1. Desactivar listado de directorios (Directory Browsing)
+Options -Indexes
+
+# 2. Bloquear acceso a archivos sensibles y de configuración
+<FilesMatch "^(\.env|\.env\..*|\.git.*|composer\.(json|lock)|package\.json|.*\.sql|.*\.md)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# 3. Bloquear acceso directo a directorios internos del backend
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /reuns/
+
+    # Denegar peticiones directas a carpetas internas
+    RewriteRule ^(app|storage|base_datos|docs|pruebas)(/.*)?$ - [F,L,NC]
+
+    # Redirigir peticiones a la raíz o index a /public/
+    RewriteRule ^$ public/ [L]
+    RewriteRule ^index\.php$ public/index.php [L]
+</IfModule>

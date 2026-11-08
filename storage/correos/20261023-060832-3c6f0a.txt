@@ -1,0 +1,7 @@
+Para: 0202614040@uns.edu.pe
+Asunto: Verifica tu correo en ReUns
+
+Hola Juan Panta,
+
+Confirma tu correo aquí (vale 24 horas):
+http://localhost/reuns/public/paginas/verificar.php?token=f13950c91b62270df980a01e9ac8fb7ef66bd84967228c9dccb5746a21a5cbfc

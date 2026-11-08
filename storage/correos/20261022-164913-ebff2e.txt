@@ -1,0 +1,7 @@
+Para: yadhfs@gmail.com
+Asunto: Verifica tu correo en ReUns
+
+Hola Palacios perez,
+
+Confirma tu correo aquí (vale 24 horas):
+http://localhost/reuns/public/paginas/verificar.php?token=3714a453449aa623b9cda7a54fc3e5c5c99a81b798b89053c33ca74e7d91dfe4

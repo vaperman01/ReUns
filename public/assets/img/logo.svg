@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 64" role="img" aria-label="ReUns">
+  <rect x="4" y="4" width="56" height="56" rx="16" fill="#0F766E"/>
+  <path d="M19.2 29.7 A13 13 0 0 1 44.2 27.6" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+  <polygon points="48,26.2 40.4,29 46,32.5" fill="#fff"/>
+  <path d="M44.8 34.3 A13 13 0 0 1 19.8 36.4" fill="none" stroke="#FBBF24" stroke-width="4" stroke-linecap="round"/>
+  <polygon points="23.6,35.1 16,37.7 18.1,31.7" fill="#FBBF24"/>
+  <text x="70" y="44" font-family="Poppins, Arial, sans-serif" font-size="32" font-weight="700" fill="#0F172A">Re<tspan fill="#0F766E">Uns</tspan></text>
+</svg>

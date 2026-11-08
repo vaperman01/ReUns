@@ -1,0 +1,7 @@
+Para: admin@uns.edu.pe
+Asunto: Verifica tu correo en ReUns
+
+Hola Juan pablo,
+
+Confirma tu correo aquí (vale 24 horas):
+http://localhost/reuns/public/paginas/verificar.php?token=52d9dd2b40d5dec0de81031b12598aca4ff8f96f5bcd0694fea4e41ad05f4d8a
